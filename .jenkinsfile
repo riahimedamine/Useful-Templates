@@ -1,0 +1,54 @@
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                // build steps e.g.
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                //test steps e.g.
+                sh 'mvn test'
+            }
+        }
+
+        stage('Deliver') {
+            steps {
+                sh 'echo "Deliver artifact"'
+                //deploy/deliver artifact
+            }
+
+            post {
+                always {
+                    // post-stage actions, e.g. cleanup
+                }
+                success {
+                    //notify on success
+                }
+                failure {
+                    //notify on failure
+                }
+            }
+        }
+
+    }
+
+    post {
+        always {
+            // post-stage actions, e.g. cleanup
+        }
+        success {
+            //notify on success
+        }
+        failure {
+            //notify on failure
+        }
+    }
+
+}

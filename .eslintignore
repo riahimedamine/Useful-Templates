@@ -1,0 +1,34 @@
+# Ignore build folders
+/dist
+/build
+
+# Ignore node modules
+/node_modules
+
+# Ignore config files 
+/*.config.js
+
+# Ignore 3rd party / vendor code
+/vendor
+
+# Ignore generated files
+/*.min.js
+
+# Ignore webpack config
+/webpack.config.js
+
+# Ignore test coverage
+/coverage
+
+# Ignore styles and assets
+/*.css
+/*.scss
+/*.png
+/*.jpg
+
+# Ignore temp files
+/*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,40 @@
+# Ignore node modules
+node_modules
+
+# Ignore build output
+dist
+build
+
+# Ignore config files
+package.json
+package-lock.json
+
+# Ignore test artifacts
+coverage
+
+# Ignore temp/cache files
+.tmp
+*.log
+
+# Ignore editor config files
+.vscode
+.idea
+
+# Ignore OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore webpack bundle artifacts
+bundle.js
+bundle.js.map
+
+# Ignore styles
+*.css
+*.scss
+
+# Ignore other file types
+*.jpg
+*.png
+*.gif
+*.ejs
+*.svg

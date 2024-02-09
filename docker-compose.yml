@@ -1,0 +1,43 @@
+version: "3.8" 
+
+services:
+
+  # App/web service
+  app:
+    image: app-image:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+    environment:
+      - APP_ENV=[local|developement|production]
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py", "http://localhost:8080", "/health"] 
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # Database service 
+  db:
+    image: postgres:latest
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "$POSTGRES_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+# Volumes
+volumes:
+  db-data:
+
+# Networks
+networks:
+  default:
+    driver: bridge

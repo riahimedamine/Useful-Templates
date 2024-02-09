@@ -1,0 +1,142 @@
+:root {
+	--color-scheme: dark;
+	--font-family: system-ui;
+
+	--fs-300: 0.5rem;
+	--fs-400: 0.625rem;
+	--fs-500: 0.75rem;
+	--fs-600: 0.875rem;
+	--fs-700: 1rem;
+	--fs-800: 1.25rem;
+	--fs-900: 1.5rem;
+
+	--fw-300: 300;
+	--fw-400: 400;
+	--fw-500: 500;
+	--fw-600: 600;
+	--fw-700: 700;
+	--fw-800: 800;
+	--fw-900: 900;
+
+	--clr-primary-300: lightblue;
+	--clr-primary-400: blue;
+	--clr-primary-500: darkblue;
+	--clr-secondary-300: lightgreen;
+	--clr-secondary-400: green;
+	--clr-secondary-500: darkgreen;
+	--clr-accent-300: lightcoral;
+	--clr-accent-400: coral;
+	--clr-accent-500: red;
+	--clr-neutral-300: lightgrey;
+	--clr-neutral-400: grey;
+	--clr-neutral-500: darkgrey;
+	--clr-text-primary: white;
+	--clr-text-secondary: lightgrey;
+	--clr-text-accent: grey;
+	--clr-bg-primary: black;
+	--clr-bg-secondary: darkgrey;
+	--clr-bg-accent: grey;
+	--clr-bg-neutral: white;
+	--clr-bg-overlay: rgba(0, 0, 0, 0.5);
+	--clr-border-primary: white;
+	--clr-border-secondary: lightgrey;
+	--clr-border-accent: grey;
+	--clr-border-neutral: black;
+	--clr-border-overlay: rgba(255, 255, 255, 0.5);
+	--clr-shadow-primary: rgba(0, 0, 0, 0.5);
+	--clr-shadow-secondary: rgba(0, 0, 0, 0.5);
+	--clr-shadow-accent: rgba(0, 0, 0, 0.5);
+	--clr-shadow-neutral: rgba(0, 0, 0, 0.5);
+	--clr-shadow-overlay: rgba(255, 255, 255, 0.5);
+	--clr-error: red;
+	--clr-success: green;
+	--clr-warning: yellow;
+	--clr-info: blue;
+	--clr-default: black;
+
+	--spacer: 1rem;
+	--spacer-1: 0.25rem;
+	--spacer-2: 0.5rem;
+	--spacer-3: 1rem;
+	--spacer-4: 2rem;
+	--spacer-5: 4rem;
+
+	--radius: 0.5rem;
+	--radius-1: 0.125rem;
+	--radius-2: 0.25rem;
+	--radius-3: 0.5rem;
+	--radius-4: 1rem;
+	--radius-5: 2rem;
+	--radius-pill: 9999px;
+	--radius-circle: 50%;
+	--radius-rounded: 50% 50% 50% 50% / 50% 50% 50% 50%;
+}
+
+/* CSS Clear */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: var(--font-family);
+	color: var(--clr-text-primary);
+}
+
+/* Content Grid (Center Elements, Layout) */
+.content-grid {
+	--inline-padding__: 2rem;
+	--content-max-width__: 100ch;
+	--breakout-max-width__: 120ch;
+
+	--content-size__: min(calc(100% - (var(--inline-padding__) * 2)), var(--content-max-width__));
+	--breakout-size__: minmax(0, calc((var(--breakout-max-width__) - var(--content-max-width__)) / 2));
+	--full-width-size__: minmax(var(--inline-padding__), 1fr);
+
+	display: grid;
+	grid-template-columns:
+		[full-width-start] var(--full-width-size__) [breakout-start] var(--breakout-size__) [content-start] var(--content-size__) [content-end] var(--breakout-size__) [breakout-end] var(--full-width-size__) [full-width-end];
+}
+
+
+.content-grid>:not(.breakout, .full-width) {
+	grid-column: content;
+}
+
+.content-grid>.breakout {
+	grid-column: breakout !important;
+}
+
+.content-grid>.full-width {
+	grid-column: full-width;
+}
+
+/* Card (Util) */
+.card {
+	--card-bg__: var(--clr-bg-primary);
+	--card-fg__: var(--clr-text-primary);
+	--card-border__: var(--clr-border-primary);
+	--card-shadow__: var(--clr-shadow-primary);
+	--card-radius__: var(--radius-5);
+	--card-padding__: var(--spacer-3);
+	--card-margin__: var(--spacer-3);
+	--card-width__: calc(100% - (var(--card-padding__) * 2));
+	--card-height__: auto;
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacer-3);
+	padding: var(--card-padding__);
+	margin: var(--card-margin__);
+	width: var(--card-width__);
+	height: var(--card-height__);
+	overflow: hidden;
+	background-color: var(--card-bg__);
+	color: var(--card-fg__);
+	border: 1px solid var(--card-border__);
+	border-radius: var(--card-radius__);
+	box-shadow: var(--card-shadow__);
+	justify-content: center;
+	align-items: start;
+	text-align: justify;
+}
