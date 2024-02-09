@@ -24,17 +24,17 @@ To use this template, download the needed files and edit them to your liking.
 
 ## Contents
 
--   .dockerfile: A Dockerfile template for containerization.
--   docker-compose.yml: A docker-compose template for connecting multiple containers and local development.
--   .editorconfig: An editorconfig template for consistent coding style.
--   .eslintrc: An eslintrc template for consistent coding style and discovery of errors.
--   .eslintignore: An eslintignore template.
--   .prettierrc: A prettierrc template for consistent coding style.
--   .prettierignore: A prettierignore template.
--   .jenkinsfile: A jenkinsfile template for continuous integration and delivery.
--   style.css: A css file containing useful styles.
--   README.template.md: A README template for documentation.
--   LICENSE: A LICENSE template for open source licensing (MIT). !! Remember to edit the year and the owner. !!
+-   [.dockerfile](/.dockerfile): A Dockerfile template for containerization.
+-   [docker-compose.yml](/docker-compose.yml): A docker-compose template for connecting multiple containers and local development.
+-   [.editorconfig](/.editorconfig): An editorconfig template for consistent coding style.
+-   [.eslintrc](/.eslintrc): An eslintrc template for consistent coding style and discovery of errors.
+-   [.eslintignore](/.eslintignore): An eslintignore template.
+-   [.prettierrc](/.prettierrc): A prettierrc template for consistent coding style.
+-   [.prettierignore](/.prettierignore): A prettierignore template.
+-   [.jenkinsfile](/.jenkinsfile): A jenkinsfile template for continuous integration and delivery.
+-   [style.css](/style.css): A css file containing useful styles.
+-   [README.template.md](/README.template.md): A README template for documentation.
+-   [LICENSE](/LICENSE): A LICENSE template for open source licensing (MIT). !! Remember to edit the year and the owner. !!
 
 ## Contributing
 
